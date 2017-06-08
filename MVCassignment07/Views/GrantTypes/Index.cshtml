@@ -1,0 +1,51 @@
+﻿@model IEnumerable<MVCassignment07.Models.GrantType>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.GrantTypeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GrantTypeMaximum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GrantTypeLifetimeMaximum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GrantTypeDescription)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.GrantTypeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GrantTypeMaximum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GrantTypeLifetimeMaximum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GrantTypeDescription)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.GrantTypeKey }) |
+            @Html.ActionLink("Details", "Details", new { id=item.GrantTypeKey }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.GrantTypeKey })
+        </td>
+    </tr>
+}
+
+</table>
